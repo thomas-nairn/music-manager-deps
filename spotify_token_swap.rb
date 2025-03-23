@@ -39,7 +39,7 @@ require 'encrypted_strings'
 CLIENT_ID = ENV["SPOTIFY_CLIENT_ID"]
 CLIENT_SECRET = ENV["SPOTIFY_CLIENT_SECRET"]
 ENCRYPTION_SECRET = ENV["ENCRYPTION_SECRET"]
-CLIENT_CALLBACK_URL = "spotify-login-sdk-test-app://spotify-login-callback"
+CLIENT_CALLBACK_URL = "music-manager-app://spotify-login-callback"
 AUTH_HEADER = "Basic " + Base64.strict_encode64(CLIENT_ID + ":" + CLIENT_SECRET)
 SPOTIFY_ACCOUNTS_ENDPOINT = URI.parse("https://accounts.spotify.com")
 
