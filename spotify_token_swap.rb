@@ -107,3 +107,19 @@ post '/refresh' do
     return response.body
 
 end
+
+post '/client-token' do
+  http = Net::HTTP.new(SPOTIFY_ACCOUNTS_ENDPOINT.host, SPOTIFY_ACCOUNTS_ENDPOINT.port)
+  http.use_ssl = true
+
+  request = Net::HTTP::Post.new("/api/token")
+  request.add_field("Authorization", AUTH_HEADER)
+  request.set_form_data({
+    "grant_type" => "client_credentials"
+  })
+
+  response = http.request(request)
+  status response.code.to_i
+  return response.body
+end
+
